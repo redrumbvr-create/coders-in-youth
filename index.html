@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CodeCamp</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="brand">&lt;/&gt; <b>CodeCamp</b></div>
+<nav><button data-view="home" class="active">Home</button><button data-view="training">Training</button><button data-view="projects">Code Lab</button><button data-view="safety">Safety</button></nav>
+<div class="user">🧑‍💻 DragonDev</div></header>
+
+<div class="app">
+<aside>
+<h4>COMMUNITIES <button id="newRoom">+</button></h4>
+<button class="room active" data-room="Coding Hub">🌐 Coding Hub</button>
+<button class="room" data-room="VR Devs">🥽 VR Devs</button>
+<button class="room" data-room="PC Game Dev">🖥️ PC Game Dev</button>
+<button class="room" data-room="Roblox Builders">🧱 Roblox Builders</button>
+<button class="room" data-room="Minecraft Mods">⛏️ Minecraft Mods</button>
+<button class="room" data-room="Web Creators">🌎 Web Creators</button>
+<hr><div class="safe">🛡️ <b>Safety mode</b><br><small>Filters and community protections are enabled.</small></div>
+</aside>
+
+<main>
+<section id="home" class="view">
+<div class="hero"><div><small>WELCOME TO CODECAMP</small><h1>Build. Learn. <span>Share.</span></h1><p>A coding community for young creators, with learning tools and safety built in.</p><button class="primary" id="learn">Start learning →</button> <button class="secondary" id="lab">Open Code Lab</button></div><pre>const game = {
+  idea: "awesome",
+  fun: 100,
+  build: () => "create!"
+};</pre></div>
+<h2>Your communities</h2><div class="cards" id="cards"></div>
+</section>
+
+<section id="training" class="view hidden"><small>TRAINING</small><h1>Learn by building</h1><div class="cards">
+<article><b>🌐 Web Basics</b><p>HTML, CSS, layouts and accessible pages.</p><button class="primary">Start course</button></article>
+<article><b>🟨 JavaScript</b><p>Variables, functions, arrays and interactive apps.</p><button class="primary">Continue</button></article>
+<article><b>🐍 Python</b><p>Learn programming with a friendly, powerful language.</p><button class="primary">Start course</button></article>
+<article><b>🎮 Game Development</b><p>Game loops, input, levels and project structure.</p><button class="primary">Start course</button></article>
+</div></section>
+
+<section id="projects" class="view hidden"><small>CODE LAB</small><h1>Build something</h1><p>Experiment with JavaScript right in the browser.</p>
+<div class="editor"><div><b>main.js</b><button class="small" id="run">▶ Run</button><button class="small" id="save">Save</button></div>
+<textarea id="code">function greet(name) {
+  return "Hello, " + name + "!";
+}
+console.log(greet("CodeCamp"));</textarea><pre id="output">Console ready...</pre></div></section>
+
+<section id="safety" class="view hidden"><small>SAFETY CENTER</small><h1>Keep CodeCamp safe</h1><div class="cards">
+<article>🚩 <b>Report</b><p>Report messages, projects or accounts that break the rules.</p><button class="secondary" onclick="alert('Demo: reporting would open a moderated report form.')">Report</button></article>
+<article>🚫 <b>Block</b><p>Block an account so it cannot contact you.</p><button class="secondary" onclick="alert('Demo: blocking would update your account settings.')">Block</button></article>
+<article>👨‍👩‍👧 <b>Guardian controls</b><p>Age-appropriate settings and consent workflows belong on the server in a real deployment.</p><button class="secondary" onclick="alert('Demo: guardian dashboard')">Open</button></article>
+<article>🔐 <b>Privacy</b><p>Never share passwords, addresses, school details or private contact information.</p></article>
+</div><div class="notice"><b>Prototype notice:</b> this demo does not actually verify age, identify adults, moderate live conversations, store accounts, or provide legal child-safety compliance.</div></section>
+
+<section id="chat" class="view hidden">
+<div class="chatHead"><div><small>COMMUNITY</small><h1 id="roomName">Coding Hub</h1></div><button class="primary" id="joinVoice">🎙 Join Voice</button></div>
+<div class="chatLayout"><div class="messages" id="messages"></div>
+<div class="voice"><h3>🔊 Voice Channels</h3><button class="voiceRoom" data-voice="Code & Chill">🔊 Code & Chill <span>3</span></button><button class="voiceRoom" data-voice="Game Dev">🔊 Game Dev <span>5</span></button><button class="voiceRoom" data-voice="Help Desk">🔊 Help Desk <span>2</span></button><div id="voiceState" class="voiceState">Not connected</div></div></div>
+<div class="composer"><input id="msg" placeholder="Message the community…"><button class="primary" id="send">Send</button></div>
+</section>
+</main></div>
+
+<div id="voiceModal" class="modal hidden"><div class="modalBox"><button class="x" id="closeVoice">×</button><h2>🎙 Voice channel</h2><p id="voiceTitle">Code & Chill</p><div class="mic">🎙</div><p id="voiceStatus">Connecting…</p><button class="primary" id="leaveVoice">Leave voice</button><small>Prototype only — no audio is transmitted. A real version should use WebRTC plus strong moderation and safety controls.</small></div></div>
+<script src="app.js"></script>
+</body></html>
